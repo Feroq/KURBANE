@@ -31,12 +31,6 @@
     <div class="container">
         <h1>KURBANE ❤️</h1>
         <h2>Doğum Günün Kutlu Olsun! 🎉</h2>
-        
-        <!-- Buraya sen fotoğrafları ekleyeceksin -->
-        <div class="gallery">
-            <!-- Örnek: <img src="FOTOĞRAF_LİNKİ_BURAYA" alt="Anı"> -->
-            <!-- Birkaç tane eklemek istersen yan yana/alt alta otomatik dizilecek -->
-        </div>
 
         <div class="message">
             <p>Can yoldaşım,</p>
@@ -57,7 +51,7 @@
     </div>
 
     <script>
-        // Güller düşme efekti (pembe romantik)
+        // Güller düşme efekti
         const canvas = document.getElementById('petals');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -91,7 +85,7 @@
                 ctx.globalAlpha = this.opacity;
                 ctx.translate(this.x, this.y);
                 ctx.rotate(this.rotation * Math.PI / 180);
-                ctx.fillStyle = '#ff69b4';
+                ctx.fillStyle = '#ff69b4'; // Pembe gül yaprağı
                 ctx.beginPath();
                 ctx.moveTo(0, 0);
                 ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, -this.size / 4, this.size / 2, this.size / 2);
