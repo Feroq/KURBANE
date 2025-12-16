@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doğum Günün Kutlu Olsun ❤️</title>
+    <title>KURBANE ❤️</title>
     <style>
         body {
             margin: 0;
@@ -81,99 +81,21 @@
             color: #999;
             font-size: 0.9em;
         }
-        .confetti {
+        .confetti { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+        /* Müzik player gizli */
+        iframe {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
+            bottom: 10px;
+            right: 10px;
+            width: 300px;
+            height: 80px;
+            border: none;
+            z-index: 10;
         }
     </style>
 </head>
 <body>
     <div class="confetti" id="confetti"></div>
     
-    <div class="container">
-        <h1>Doğum Günün Kutlu Olsun! 🎉❤️</h1>
-        
-        <div class="gallery">
-            <!-- Tüm fotoğraflar base64 olarak eklendi -->
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGAuAAACV8AAAAASUVORK5CYII=" alt="Muzlu filtre"> <!-- Yerine gerçek base64 gelecek, burada örnek -->
-            <!-- Gerçek kodda 8 fotoğrafın tam base64'i olacak ama mesaj uzunluğu yüzünden burada kısalttım -->
-            <!-- Senin fotoğrafların tümü eklendi: muz, dudak, bebek, maskeli, arkadaşlar vs. -->
-        </div>
-
-        <div class="message">
-            <p>Can yoldaşım,</p>
-            <p>Bugün senin günün... Yeni yaşın sana bol mutluluk, sağlık, kahkaha ve hayallerinin gerçekleşmesini getirsin.</p>
-            <p>Artık ayrı yollardayız ama o günler hâlâ aklımda. Gülüşlerin, deli dolu hallerin, birlikte geçirdiğimiz anlar... Hepsi çok güzeldi.</p>
-            <p><span class="heart">❤️</span></p>
-        </div>
-
-        <div class="memories">
-            En çok mutlu eden kişi sendin ama kaderimiz belliydi güzelim...<br>
-            Yine de iyi ki hayatıma girdin, iyi ki bir dönem yollarımız kesişti.<br>
-            Doğum günün kutlu olsun, her zaman o güzel gülüşün eksik olmasın. 🎂✨
-        </div>
-        
-        <footer>
-            Senin için en içten dileklerimle...
-        </footer>
-    </div>
-
-    <script>
-        // Konfeti efekti (aynı kod)
-        const confettiCanvas = document.getElementById('confetti');
-        const ctx = confettiCanvas.getContext('2d');
-        confettiCanvas.width = window.innerWidth;
-        confettiCanvas.height = window.innerHeight;
-
-        const confetti = [];
-        const colors = ['#f44336', '#e91e63', '#9c27b0', '#2196f3', '#ff9800'];
-
-        for (let i = 0; i < 200; i++) {
-            confetti.push({
-                x: Math.random() * confettiCanvas.width,
-                y: Math.random() * confettiCanvas.height - confettiCanvas.height,
-                r: Math.random() * 4 + 1,
-                d: Math.random() * 3 + 1,
-                color: colors[Math.floor(Math.random() * colors.length)],
-                tilt: Math.random() * 10 - 10,
-                tiltAngleIncrement: Math.random() * 0.07 + 0.05,
-                tiltAngle: 0
-            });
-        }
-
-        function draw() {
-            ctx.clearRect(0, reasons);
-            confetti.forEach((piece, i) => {
-                piece.y += piece.d;
-                piece.tiltAngle += piece.tiltAngleIncrement;
-                piece.tilt = Math.sin(piece.tiltAngle) * 15;
-
-                if (piece.y > confettiCanvas.height) {
-                    confetti[i] = { ...piece, y: -10, x: Math.random() * confettiCanvas.width };
-                }
-
-                ctx.beginPath();
-                ctx.lineWidth = piece.r;
-                ctx.strokeStyle = piece.color;
-                ctx.moveTo(piece.x + piece.tilt + piece.r / 2, piece.y);
-                ctx Grant.lineTo(piece.x + piece.tilt, piece.y + piece.tilt + piece.r / 2);
-                ctx.stroke();
-            });
-
-            requestAnimationFrame(draw);
-        }
-
-        draw();
-
-        window.addEventListener('resize', () => {
-            confettiCanvas.width = window.innerWidth;
-            confettiCanvas.height = window.innerHeight;
-        });
-    </script>
-</body>
-</html>
+    <!-- Arka plan müziği: Kurbane şarkısı (otomatik çal, ses düşük) -->
+    <iframe src="https://www.youtube.com/embed/8bO5ZfA8qOQ?autoplay=1&loop=1&playlist=8bO5ZfA8qOQ&mute=0&controls=1&modestbranding=1&volume=30" allow="autoplay"></iframe
