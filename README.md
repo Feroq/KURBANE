@@ -119,7 +119,7 @@
         <h2>Doğum Günün Kutlu Olsun! 🎉</h2>
         
         <div class="gallery">
-            <img src="https://i.ibb.co/4p7X6nF/banana.jpg" alt="Muzlu filtre">
+            <img src="2025-09-02-171750908.mp4" alt="Muzlu filtre">
             <img src="https://i.ibb.co/09kDq7k/lipstick-kiss.jpg" alt="Öpücük izi">
             <img src="https://i.ibb.co/6nY3jKx/big-lips.jpg" alt="Büyük dudaklar">
             <img src="https://i.ibb.co/4pQjY3Q/bunny-filter.jpg" alt="Tavşan filtre">
