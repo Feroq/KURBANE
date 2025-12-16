@@ -17,13 +17,13 @@
         .memories { margin: 50px 0; padding: 30px; background: rgba(255,105,180,0.15); border-radius: 15px; font-size: 1.7em; font-weight: bold; color: #e91e63; line-height: 2; }
         footer { margin-top: 50px; color: #999; font-size: 0.9em; }
         .petals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; }
-        #bg-music { position: absolute; left: -9999px; top: -9999px; }
+        #bg-music { position: absolute; left: -9999px; top: -9999px; width: 1px; height: 1px; }
     </style>
 </head>
 <body>
 
-    <!-- Şarkı otomatik çalsın (gizli) -->
-    <iframe id="bg-music" src="https://www.youtube.com/embed/fJv6zfTKVd8?autoplay=1&loop=1&playlist=fJv6zfTKVd8&controls=0&showinfo=0&rel=0&modestbranding=1" allow="autoplay" frameborder="0"></iframe>
+    <!-- Yeni müzik: O gece dolunaydı (otomatik + loop + sesli) -->
+    <iframe id="bg-music" src="https://www.youtube.com/embed/p6Tcjri4XBk?autoplay=1&loop=1&playlist=p6Tcjri4XBk&controls=0&modestbranding=1&rel=0" allow="autoplay" frameborder="0"></iframe>
 
     <!-- Güller düşme efekti -->
     <canvas class="petals" id="petals"></canvas>
@@ -31,6 +31,11 @@
     <div class="container">
         <h1>KURBANE ❤️</h1>
         <h2>Doğum Günün Kutlu Olsun! 🎉</h2>
+        
+        <!-- Fotoğrafları buraya ekle -->
+        <div class="gallery">
+            <!-- <img src="link" alt="Anı"> -->
+        </div>
 
         <div class="message">
             <p>Can yoldaşım,</p>
@@ -50,8 +55,8 @@
         </footer>
     </div>
 
+    <!-- Güller scripti (aynı) -->
     <script>
-        // Güller düşme efekti
         const canvas = document.getElementById('petals');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -85,7 +90,7 @@
                 ctx.globalAlpha = this.opacity;
                 ctx.translate(this.x, this.y);
                 ctx.rotate(this.rotation * Math.PI / 180);
-                ctx.fillStyle = '#ff69b4'; // Pembe gül yaprağı
+                ctx.fillStyle = '#ff69b4';
                 ctx.beginPath();
                 ctx.moveTo(0, 0);
                 ctx.bezierCurveTo(this.size / 2, -this.size / 2, this.size, -this.size / 4, this.size / 2, this.size / 2);
