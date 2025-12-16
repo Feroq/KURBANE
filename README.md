@@ -98,4 +98,4 @@
     <div class="confetti" id="confetti"></div>
     
     <!-- Arka plan müziği: Kurbane şarkısı (otomatik çal, ses düşük) -->
-    <iframe src="https://www.youtube.com/embed/8bO5ZfA8qOQ?autoplay=1&loop=1&playlist=8bO5ZfA8qOQ&mute=0&controls=1&modestbranding=1&volume=30" allow="autoplay"></iframe
+    <iframe src="https://youtu.be/szGNTBRkw0g?si=SDvmRrEd1fa5oVP2?autoplay=1&loop=1&playlist=8bO5ZfA8qOQ&mute=0&controls=1&modestbranding=1&volume=30" allow="autoplay"></iframe
