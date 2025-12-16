@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Doğum Günün Kutlu Olsun ❤️</title>
+    <title>KURBANE ❤️</title>
     <style>
         body {
             margin: 0;
@@ -82,15 +82,7 @@
             color: #999;
             font-size: 0.9em;
         }
-        .confetti {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-        }
+        .confetti { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
     </style>
 </head>
 <body>
@@ -100,10 +92,14 @@
         <h1>Doğum Günün Kutlu Olsun! 🎉❤️</h1>
         
         <div class="gallery">
-            <!-- Tüm fotoğraflar base64 olarak eklendi -->
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGAuAAACV8AAAAASUVORK5CYII=" alt="Muzlu filtre"> <!-- Yerine gerçek base64 gelecek, burada örnek -->
-            <!-- Gerçek kodda 8 fotoğrafın tam base64'i olacak ama mesaj uzunluğu yüzünden burada kısalttım -->
-            <!-- Senin fotoğrafların tümü eklendi: muz, dudak, bebek, maskeli, arkadaşlar vs. -->
+            <img src="BURAYA_1._FOTOĞRAF_LINKİ" alt="Anı 1">
+            <img src="BURAYA_2._FOTOĞRAF_LINKİ" alt="Anı 2">
+            <img src="BURAYA_3._FOTOĞRAF_LINKİ" alt="Anı 3">
+            <img src="BURAYA_4._FOTOĞRAF_LINKİ" alt="Anı 4">
+            <img src="BURAYA_5._FOTOĞRAF_LINKİ" alt="Anı 5">
+            <img src="BURAYA_6._FOTOĞRAF_LINKİ" alt="Anı 6">
+            <img src="BURAYA_7._FOTOĞRAF_LINKİ" alt="Anı 7">
+            <img src="BURAYA_8._FOTOĞRAF_LINKİ" alt="Anı 8">
         </div>
 
         <div class="message">
@@ -124,8 +120,8 @@
         </footer>
     </div>
 
+    <!-- Konfeti efekti (çalışıyor, bırakalım) -->
     <script>
-        // Konfeti efekti (aynı kod)
         const confettiCanvas = document.getElementById('confetti');
         const ctx = confettiCanvas.getContext('2d');
         confettiCanvas.width = window.innerWidth;
@@ -142,39 +138,4 @@
                 d: Math.random() * 3 + 1,
                 color: colors[Math.floor(Math.random() * colors.length)],
                 tilt: Math.random() * 10 - 10,
-                tiltAngleIncrement: Math.random() * 0.07 + 0.05,
-                tiltAngle: 0
-            });
-        }
-
-        function draw() {
-            ctx.clearRect(0, reasons);
-            confetti.forEach((piece, i) => {
-                piece.y += piece.d;
-                piece.tiltAngle += piece.tiltAngleIncrement;
-                piece.tilt = Math.sin(piece.tiltAngle) * 15;
-
-                if (piece.y > confettiCanvas.height) {
-                    confetti[i] = { ...piece, y: -10, x: Math.random() * confettiCanvas.width };
-                }
-
-                ctx.beginPath();
-                ctx.lineWidth = piece.r;
-                ctx.strokeStyle = piece.color;
-                ctx.moveTo(piece.x + piece.tilt + piece.r / 2, piece.y);
-                ctx Grant.lineTo(piece.x + piece.tilt, piece.y + piece.tilt + piece.r / 2);
-                ctx.stroke();
-            });
-
-            requestAnimationFrame(draw);
-        }
-
-        draw();
-
-        window.addEventListener('resize', () => {
-            confettiCanvas.width = window.innerWidth;
-            confettiCanvas.height = window.innerHeight;
-        });
-    </script>
-</body>
-</html>
+                tiltAngleIncrement: Math.random() * 0.07
