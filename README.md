@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
@@ -23,13 +24,17 @@
             background: rgba(255, 255, 255, 0.95);
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-            margin: 20px;
+            margin: 20px auto;
         }
         h1 {
-            font-size: 3.5em;
+            font-size: 3.8em;
             color: #e91e63;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        h2 {
+            font-size: 2em;
+            color: #e91e63;
+            margin-bottom: 30px;
         }
         .gallery {
             display: grid;
@@ -57,23 +62,22 @@
         }
         .heart {
             color: #e91e63;
-            font-size: 1.5em;
+            font-size: 1.8em;
             animation: pulse 2s infinite;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+            50% { transform: scale(1.3); }
             100% { transform: scale(1); }
         }
         .memories {
-            margin-top: 50px;
-            font-style: italic;
-            color: #e91e63;
-            font-size: 1.6em;
-            font-weight: bold;
-            background: rgba(255,105,180,0.1);
-            padding: 25px;
+            margin: 50px 0;
+            padding: 30px;
+            background: rgba(255,105,180,0.15);
             border-radius: 15px;
+            font-size: 1.7em;
+            font-weight: bold;
+            color: #e91e63;
             line-height: 2;
         }
         footer {
@@ -81,21 +85,116 @@
             color: #999;
             font-size: 0.9em;
         }
-        .confetti { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
-        /* Müzik player gizli */
-        iframe {
+        .confetti {
             position: fixed;
-            bottom: 10px;
-            right: 10px;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .music-player {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            z-index: 10;
             width: 300px;
             height: 80px;
-            border: none;
-            z-index: 10;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
         }
     </style>
 </head>
 <body>
+
     <div class="confetti" id="confetti"></div>
-    
-    <!-- Arka plan müziği: Kurbane şarkısı (otomatik çal, ses düşük) -->
-    <iframe src="https://youtu.be/szGNTBRkw0g?si=SDvmRrEd1fa5oVP2?autoplay=1&loop=1&playlist=8bO5ZfA8qOQ&mute=0&controls=1&modestbranding=1&volume=30" allow="autoplay"></iframe
+
+    <!-- Yeni şarkı: Tam senin verdiğin YouTube Shorts (otomatik çal, döngülü) -->
+    <div class="music-player">
+        <iframe src="https://www.youtube.com/embed/fJv6zfTKVd8?autoplay=1&loop=1&playlist=fJv6zfTKVd8&controls=1&modestbranding=1&rel=0" allow="autoplay; encrypted-media" frameborder="0"></iframe>
+    </div>
+
+    <div class="container">
+        <h1>KURBANE ❤️</h1>
+        <h2>Doğum Günün Kutlu Olsun! 🎉</h2>
+        
+        <div class="gallery">
+            <img src="https://i.ibb.co/4p7X6nF/banana.jpg" alt="Muzlu filtre">
+            <img src="https://i.ibb.co/09kDq7k/lipstick-kiss.jpg" alt="Öpücük izi">
+            <img src="https://i.ibb.co/6nY3jKx/big-lips.jpg" alt="Büyük dudaklar">
+            <img src="https://i.ibb.co/4pQjY3Q/bunny-filter.jpg" alt="Tavşan filtre">
+            <img src="https://i.ibb.co/8XvZ3qW/chat-screenshot.jpg" alt="Mesajlaşma">
+            <img src="https://i.ibb.co/3hY3pQj/baby-hand.jpg" alt="Bebek eli">
+            <img src="https://i.ibb.co/7pQ3kLm/masked-girl.jpg" alt="Maskeli kız">
+            <img src="https://i.ibb.co/5Yk3pQj/two-girls.jpg" alt="İki kız">
+        </div>
+
+        <div class="message">
+            <p>Can yoldaşım,</p>
+            <p>Bugün senin günün... Yeni yaşın sana bol mutluluk, sağlık, kahkaha ve hayallerinin gerçekleşmesini getirsin.</p>
+            <p>Artık ayrı yollardayız ama o günler hâlâ aklımda. Gülüşlerin, deli dolu hallerin, birlikte geçirdiğimiz anlar... Hepsi çok güzeldi.</p>
+            <p><span class="heart">❤️</span></p>
+        </div>
+
+        <div class="memories">
+            En çok mutlu eden kişi sendin ama kaderimiz belliydi güzelim...<br>
+            Yine de iyi ki hayatıma girdin, iyi ki bir dönem yollarımız kesişti.<br>
+            Doğum günün kutlu olsun, her zaman o güzel gülüşün eksik olmasın. 🎂✨
+        </div>
+        
+        <footer>
+            Senin için en içten dileklerimle... Kurbane ❤️
+        </footer>
+    </div>
+
+    <!-- Konfeti efekti -->
+    <script>
+        const confettiCanvas = document.getElementById('confetti');
+        const ctx = confettiCanvas.getContext('2d');
+        confettiCanvas.width = window.innerWidth;
+        confettiCanvas.height = window.innerHeight;
+
+        const confetti = [];
+        const colors = ['#f44336', '#e91e63', '#9c27b0', '#2196f3', '#ff9800'];
+
+        for (let i = 0; i < 250; i++) {
+            confetti.push({
+                x: Math.random() * confettiCanvas.width,
+                y: Math.random() * confettiCanvas.height - confettiCanvas.height,
+                r: Math.random() * 4 + 1,
+                d: Math.random() * 3 + 1,
+                color: colors[Math.floor(Math.random() * colors.length)],
+                tilt: Math.random() * 10 - 10,
+                tiltAngleIncrement: Math.random() * 0.07 + 0.05,
+                tiltAngle: 0
+            });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+            confetti.forEach((piece, i) => {
+                piece.y += piece.d;
+                piece.tiltAngle += piece.tiltAngleIncrement;
+                piece.tilt = Math.sin(piece.tiltAngle) * 15;
+                if (piece.y > confettiCanvas.height) {
+                    confetti[i] = { ...piece, y: -10, x: Math.random() * confettiCanvas.width };
+                }
+                ctx.beginPath();
+                ctx.lineWidth = piece.r;
+                ctx.strokeStyle = piece.color;
+                ctx.moveTo(piece.x + piece.tilt + piece.r / 2, piece.y);
+                ctx.lineTo(piece.x + piece.tilt, piece.y + piece.tilt + piece.r / 2);
+                ctx.stroke();
+            });
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        window.addEventListener('resize', () => {
+            confettiCanvas.width = window.innerWidth;
+            confettiCanvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
+        
